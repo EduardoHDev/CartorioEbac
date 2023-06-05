@@ -138,11 +138,11 @@ int deletar() // Função responsável por deletar usuário do banco de dados
 }
 
 
-
 int main()
 {
 	int opcao=0; //variavel utilizada para selecionar a opção
 	int laco=1;
+	int confirm;
 	
 	for(laco=1;laco=1;)
 	{
@@ -155,7 +155,8 @@ int main()
 		printf("Escolha a opção desejada do menu:\n\n");
 		printf("\t1 - Registrar usúario na plataforma.\n");
 		printf("\t2 - Consultar usúario na plataforma.\n");
-		printf("\t3 - Deletar usúario da plataforma.\n\n");
+		printf("\t3 - Deletar usúario da plataforma.\n");
+		printf("\t4 - Sair do sistema\n");
 	
 		printf("Digite a opção desejada: ");
 		scanf("%d", &opcao); //armazenando a escolha do usuário
@@ -174,6 +175,25 @@ int main()
 			
 			case 3:
 				deletar();
+			break;
+			
+			case 4:
+				printf("Você tem certeza que deseja sair do sistema?\n");
+				printf("Se sim, digite 1. Caso contrário, digite 0: ");
+				scanf("%d", &confirm);
+				
+				system("cls");
+				
+				if (confirm == 1)
+				{
+					printf("Obrigado por utilizar nosso sistema!\n");
+					return 0;
+				}
+				else
+				{
+					printf("Retornando para o menu!\n");
+					system("pause");
+				}
 			break;
 			
 			default:
